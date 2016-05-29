@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="empresa" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a14cff0d-3455-4d26-a713-abc48bccb7d1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PostgresRastroGrao"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="empresaId" class="java.lang.String">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA["C:\\Users\\Claudio\\Google Drive\\appGrails\\rastrograo\\web-app\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT e.empresa_id,
+    e.tipo_empresa,
+	e.cpf_cnpj,
+	e.nome_empresa,
+	e.nome_fantasia_empresa,
+	e.email_empresa,
+	e.nome_pais,
+	e.estado_sigla,
+	e.nome_cidade,
+	e.logradouro_empresa,
+	e.numero_empresa,
+	e.bairro_empresa,
+	e.complemento_empresa,
+	e.cep_empresa
+FROM public.vw_empresa AS e
+WHERE e.empresa_id = Cast($P!{empresaId} As integer)]]>
+	</queryString>
+	<field name="empresa_id" class="java.lang.Long"/>
+	<field name="tipo_empresa" class="java.lang.String"/>
+	<field name="cpf_cnpj" class="java.lang.String"/>
+	<field name="nome_empresa" class="java.lang.String"/>
+	<field name="nome_fantasia_empresa" class="java.lang.String"/>
+	<field name="email_empresa" class="java.lang.String"/>
+	<field name="nome_pais" class="java.lang.String"/>
+	<field name="estado_sigla" class="java.lang.String"/>
+	<field name="nome_cidade" class="java.lang.String"/>
+	<field name="logradouro_empresa" class="java.lang.String"/>
+	<field name="numero_empresa" class="java.lang.String"/>
+	<field name="bairro_empresa" class="java.lang.String"/>
+	<field name="complemento_empresa" class="java.lang.String"/>
+	<field name="cep_empresa" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="194" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<rectangle radius="10">
+				<reportElement x="0" y="4" width="555" height="20" backcolor="#D6D6D6" uuid="2a30daa2-5dd7-47ae-8c8d-6fd03f036b7d">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="4" width="555" height="20" uuid="3d03f86c-fb17-4d87-b1ad-d750c62a5881">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Empresa]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="0" y="24" width="555" height="170" uuid="e55ec032-170d-492a-87e4-c1bfb67b1764">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="5" y="29" width="545" height="20" uuid="44b6f575-2cb8-4d16-8059-64379617a457">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tipo_empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="49" width="545" height="20" uuid="58a24bdc-f5e3-4491-9996-daa24254ab34">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cpf_cnpj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="69" width="545" height="20" uuid="df31cabe-224b-410a-97d3-d22eb3ebdaf5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome_empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="89" width="545" height="20" uuid="c4beadf0-ecee-45a2-9c0d-86c57b8712a2">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome_fantasia_empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="129" width="175" height="20" uuid="467af9bb-f901-4c9b-ae55-232436f02722">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome_pais}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="129" width="132" height="20" uuid="e3970d99-76c2-448a-b8d3-9ac06f4379d7"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estado_sigla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="129" width="238" height="20" uuid="f0ddd45b-a3e7-4fad-9017-712ceae7d221">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome_cidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="149" width="468" height="20" uuid="c0adeccf-9f39-4af0-9445-b24370eff3cc">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{logradouro_empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="149" width="77" height="20" uuid="81c694e2-e9bc-42bd-9076-360df1a91135"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numero_empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="169" width="215" height="20" uuid="6465cc7b-1366-4487-aa9c-ea8a07f075ba"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{bairro_empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="169" width="253" height="20" uuid="1453e223-5d6c-49e9-9fee-d7d9915d66b9"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{complemento_empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="169" width="77" height="20" uuid="ad71af1f-9b6b-4c5e-a21c-1013defdc26d">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cep_empresa}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="5" y="109" width="545" height="20" uuid="4b0a5228-5b73-4286-acd0-943e2baf6098">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{email_empresa}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20" uuid="9444ce64-3bfa-4b5f-804a-92d74ec47b33">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="empresaId">
+					<subreportParameterExpression><![CDATA[$P{empresaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"empresaCertificacoes.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20" uuid="87d0f903-3a0e-4038-801b-5d80521d0b4c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="empresaId">
+					<subreportParameterExpression><![CDATA[$P{empresaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"empresaConsolidacoes.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20" uuid="06865cbe-8b6e-49fe-936b-141d3d8c1784">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="empresaId">
+					<subreportParameterExpression><![CDATA[$P{empresaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"empresaCustomizacoes.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20" uuid="38ad1c54-d4f9-4ac4-8586-9ecb4c9c3caa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="empresaId">
+					<subreportParameterExpression><![CDATA[$P{empresaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"empresaLotes.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20" uuid="73f423a6-3d96-4cd0-9c8f-e6ba16964ca5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="empresaId">
+					<subreportParameterExpression><![CDATA[$P{empresaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"empresaResponsaveis.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20" uuid="6093e759-4157-4396-8a9e-09ed6b770bce">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="empresaId">
+					<subreportParameterExpression><![CDATA[$P{empresaId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"empresaTelefones.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

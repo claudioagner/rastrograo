@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="propriedadeLotes" pageWidth="555" pageHeight="842" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="dcdfb119-978d-4ef8-bb36-dc766f6409b4">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PostgresRastroGrao"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="cHVibGljLnZ3X3Byb3ByaWVkYWRlX2xvdGUgQVMgLDE1LDE1LGU1Y2IyZDgwLTBmZTgtNDQwYS1h&#xA;NTk2LWEyZDg4Nzk5NWUwOTs="/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="propriedadeId" class="java.lang.String">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT l.propriedade_id,
+	l.descricao_produto,
+	l.nr_lote,
+	l.volume_lote,
+	l.data_lote,
+	l.validade_lote
+FROM public.vw_propriedade_lote AS l
+WHERE l.propriedade_id = Cast($P!{propriedadeId} As integer)]]>
+	</queryString>
+	<field name="propriedade_id" class="java.lang.Long"/>
+	<field name="descricao_produto" class="java.lang.String"/>
+	<field name="nr_lote" class="java.lang.String"/>
+	<field name="volume_lote" class="java.lang.Double"/>
+	<field name="data_lote" class="java.sql.Timestamp"/>
+	<field name="validade_lote" class="java.sql.Timestamp"/>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="1" width="555" height="20" backcolor="#D6D6D6" uuid="55a40b11-08bb-44ec-9220-376032e9d4b0">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="20" uuid="2855bd88-a308-4796-8194-7618c54d8187"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Lotes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="21" width="245" height="20" uuid="7ae434bb-1138-427d-9c52-ca6a8aaf3525">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="21" width="75" height="20" uuid="f63cef98-da79-4dbb-a232-38fe31e64d73"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Lote]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="21" width="75" height="20" uuid="56e0f1c9-45a5-41f6-a31b-3a66e2c0aed3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Volume (kg)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="21" width="75" height="20" uuid="c78ac375-ed7f-47ba-a6f7-5a3303cbc55b"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Data Lote]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="21" width="75" height="20" uuid="b50553f2-2fe6-496a-aa86-69b8c6cdd410">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Validade]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="0" width="245" height="20" uuid="b6b8d40c-b287-4740-b0b6-166cb09f6887"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{descricao_produto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="75" height="20" uuid="6208557f-345b-4651-8858-fb5197ab7869"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nr_lote}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="325" y="0" width="76" height="20" uuid="00435b78-7c10-4ad3-a29c-7d5181d11fd6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{volume_lote}]]></textFieldExpression>
+			</textField>
+			<textField pattern="d/M/yyyy">
+				<reportElement x="400" y="0" width="75" height="20" uuid="8491c9c7-ded9-471a-a9f0-22536787df61"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{data_lote}]]></textFieldExpression>
+			</textField>
+			<textField pattern="d/M/yyyy">
+				<reportElement x="475" y="0" width="75" height="20" uuid="5f103079-1d85-4047-89cc-1b7a0c7fb13a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{validade_lote}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.2.final using JasperReports Library version 6.2.2  -->
+<!-- 2016-05-22T09:35:23 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rastreamento" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a5348481-c5cb-45e9-806b-0ccd0239ad36">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PostgresRastroGrao"/>
+	<parameter name="rastreamentoId" class="java.lang.String">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT r.rastro_produto_id,
+	r.nome_empresa,
+	r.nome_propriedade,
+	r.descricao_talhao,
+	r.descricao_produto,
+	r.descricao_cultivar,
+	r.ano_safra,
+	r.descricao_fase,
+	r.nome_atributo,
+	r.valor_atributo,
+	r.comentario_atributo
+FROM public.vw_registro_dados AS r
+WHERE r.rastro_produto_id = Cast($P!{rastreamentoId} As integer)]]>
+	</queryString>
+	<field name="rastro_produto_id" class="java.lang.Long"/>
+	<field name="nome_empresa" class="java.lang.String"/>
+	<field name="nome_propriedade" class="java.lang.String"/>
+	<field name="descricao_talhao" class="java.lang.String"/>
+	<field name="descricao_produto" class="java.lang.String"/>
+	<field name="descricao_cultivar" class="java.lang.String"/>
+	<field name="ano_safra" class="java.lang.String"/>
+	<field name="descricao_fase" class="java.lang.String"/>
+	<field name="nome_atributo" class="java.lang.String"/>
+	<field name="valor_atributo" class="java.lang.String"/>
+	<field name="comentario_atributo" class="java.lang.String"/>
+	<group name="rastro_produto_id">
+		<groupExpression><![CDATA[$F{rastro_produto_id}]]></groupExpression>
+		<groupHeader>
+			<band height="85">
+				<rectangle radius="10">
+					<reportElement x="0" y="0" width="555" height="20" backcolor="#CCCCCC" uuid="664f0907-1841-42f5-ad8c-5c28c224ae45">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="10">
+					<reportElement x="0" y="20" width="555" height="60" backcolor="#CCCCCC" uuid="dac1b6c1-c73b-407f-9d96-f79c7e6b85f4">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+				</rectangle>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="20" width="555" height="20" uuid="34ed9e09-7b34-4eb3-823d-03aaf7d9709d">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+						<paragraph leftIndent="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nome_empresa}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="39" width="555" height="20" uuid="60f4aadb-90b1-4df0-ac3f-334534118c40"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+						<paragraph leftIndent="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nome_propriedade}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="60" width="555" height="20" uuid="99696f30-9597-432c-8d15-9f6ada178f36"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+						<paragraph leftIndent="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{descricao_talhao}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="20" uuid="737b7a33-5df0-4794-885b-33c1797dab62">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+						<paragraph leftIndent="10"/>
+					</textElement>
+					<text><![CDATA[Rastreamento]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="descricao_produto">
+		<groupExpression><![CDATA[$F{descricao_produto}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="295" height="20" uuid="f2dc1969-64ee-4861-8895-dfb08a9bd308">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{descricao_produto}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="295" y="0" width="185" height="20" uuid="406d8065-42af-46bc-9f34-a8f1337a5872"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{descricao_cultivar}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="480" y="0" width="75" height="20" uuid="98b342f1-64e9-4910-a064-8e3e0ffa8523"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ano_safra}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="descricao_fase">
+		<groupExpression><![CDATA[$F{descricao_fase}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<rectangle radius="10">
+					<reportElement x="0" y="0" width="555" height="20" backcolor="#E0E0E0" uuid="d2c3b3a4-0d16-4d54-8a74-03b1d169a105">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+				</rectangle>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="555" height="20" uuid="057d4c37-d002-40f8-b9f6-4a638fb95e5a">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{descricao_fase}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="nome_atributo">
+		<groupExpression><![CDATA[$F{nome_atributo}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<rectangle radius="10">
+					<reportElement x="0" y="0" width="555" height="20" backcolor="#F5F5F5" uuid="6dce3306-1ba8-4d42-a004-074967253598">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+				</rectangle>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="555" height="20" uuid="f99adeda-7f1a-4bf3-bbb0-b0c1e0bb53b7">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nome_atributo}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="278" height="20" uuid="2b2557fc-d9c6-4982-acfa-cfa4518bdfdf">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor_atributo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="278" y="0" width="277" height="20" uuid="beb1397a-d2b7-419a-8cee-fd6d108b148b"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comentario_atributo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
